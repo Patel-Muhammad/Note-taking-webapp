@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 6em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+.main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: no-wrap;
+    justify-content: center;
+    align-items: center;
+    /* background-color: bla */
+}
+
+.box{
+    width: 35rem;
+    height: 25rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#add{
+  position: fixed;
+  background-color: inherit;
+  outline: none;
+  border: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  top: 15px;
+  right: 10px;
+  padding: 8px;
+  box-shadow: 1.5px 1.5px white;
+  transition: 0.2s all ease;
+}
+#add:hover{
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.box:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.669);
+    filter: blur(10px);
+    margin: -20px;
+  }
+
+  #item{
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 25px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.4px);
+    -webkit-backdrop-filter: blur(3.4px);
+    display: block;
+    transition: 0.2s all ease;
+  }
+  #item:hover{
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  #box-todo{
+    list-style: none;
+    margin-top: 20px;
+    width: 80%;
+  }
+  #box-todo li{
+    margin-top: 10px;
+    color: white;
+    background-color: black;
+    border-radius: 3px;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.498);
+    backdrop-filter: blur(3.4px);
+    -webkit-backdrop-filter: blur(3.4px);
+    transition: 0.2s all ease;
+    user-select: none;
+    position: relative;
+    padding-right: 70px;
+  }
+  #box-todo li:hover{
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.65);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .fa-trash{
+    top: 11px;
+    position: absolute;
+    right: 10px;
+  }
+  .fa-pen-to-square{
+    top: 11px;
+    position: absolute;
+    right: 37px;
+  }
+
+  .fa-trash, .fa-pen-to-square{
+    opacity: 0.5;
+    font-size: 19px;
+    color: rgba(255, 234, 234, 0.854);
+    transition: 0.3s all ease;
+  }
+
+  .fa-trash:hover{
+    color: rgb(255, 96, 96);
+    opacity: 1;
+  }
+
+  .fa-pen-to-square:hover{
+    color: rgb(255, 255, 255);
+    opacity: 1;
+  }
+
+  .done{
+    text-decoration: line-through;
+    background: rgba(0, 0, 0, 0.498);
+    opacity: 0.5;
+  }
+
